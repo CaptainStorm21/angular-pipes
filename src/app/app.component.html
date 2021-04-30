@@ -13,27 +13,43 @@
           </div>
           <div class="col-md-6 form-group " align="left">
             <label for="" class="pr-3 font-weight-bold w-100 ">Receiver's Name
-            </label>{{name | titlecase }}
+            </label>
+            <p class="h5 text-info mt-1">{{name | titlecase }}</p>
           </div>
 
           <!--payment date-->
           <div class="col-md-6 form-group" align="left">
             <label for="" class="pr-3 font-weight-bold w-100 ">Payment Date</label>
-            <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
+            <input class="w-60 form-control" type="date" (input)="onDateSet($event.target.value)" />
           </div>
           <div class="col-md-6 form-group" align="left">
             <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
-            </label>{{name | titlecase }}
+            </label>
+            <p class="h5 text-info mt-1">{{date | date:'MMMM d, y' }}</p>
+            <!-- <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
+            </label>{{date | date:'medium' }} -->
           </div>
 
           <!--Amount-->
           <div class="col-md-6 form-group" align="left">
             <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Amount</label>
-            <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
+            <input class="w-60 form-control" (input)="onPaymentAmount($event.target.value)" />
           </div>
           <div class="col-md-6 form-group" align="left">
             <label for="" class="pr-3 font-weight-bold w-100 ">Amount
-            </label>{{name | titlecase }}
+            </label>
+            <p class="h5 text-info mt-1">{{amount | currency }}</p>
+          </div>
+
+          <!--Height-->
+          <div class="col-md-6 form-group" align="left">
+            <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Height</label>
+            <input class="w-60 form-control" (input)="onHeight($event.target.value)" />
+          </div>
+          <div class="col-md-6 form-group" align="left">
+            <label for="" class="pr-3 font-weight-bold w-100 ">Height
+            </label>
+            <p class="h5 text-info mt-1">{{ height | number: '1.1-2' }}</p>
           </div>
         </div>
       </div>
