@@ -6,6 +6,7 @@
       </div>
       <div class="card-body">
         <div class="row">
+          <!--payee Name-->
           <div class="col-md-6 form-group" align="left">
             <label for="" class="pr-3 text-left w-100  font-weight-bold">Payee Name</label>
             <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
@@ -14,6 +15,8 @@
             <label for="" class="pr-3 font-weight-bold w-100 ">Receiver's Name
             </label>{{name | titlecase }}
           </div>
+
+          <!--payment date-->
           <div class="col-md-6 form-group" align="left">
             <label for="" class="pr-3 font-weight-bold w-100 ">Payment Date</label>
             <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
@@ -22,9 +25,11 @@
             <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
             </label>{{name | titlecase }}
           </div>
-          <div class="col-md-6 form-group" align="left" >
+
+          <!--Amount-->
+          <div class="col-md-6 form-group" align="left">
             <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Amount</label>
-            <input class="w-60 form-control"  (input)="onNameChange($event.target.value)" />
+            <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
           </div>
           <div class="col-md-6 form-group" align="left">
             <label for="" class="pr-3 font-weight-bold w-100 ">Amount
