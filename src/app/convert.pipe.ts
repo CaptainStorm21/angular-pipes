@@ -6,7 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ConvertPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    // if no value is entered
+    if (!value) {
+      return'';
+    }
+    console.log(value);
+    return (value * 1.60934);
   }
 
 }
