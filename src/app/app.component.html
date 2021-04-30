@@ -50,9 +50,13 @@
             </div>
             <div class="col-md-6 form-group" align="left">
               <label for="" class="pr-3 font-weight-bold w-100 ">Convert from Miles to Kilometers</label>
-             <p class="h5 text-info mt-1"> Output: {{miles | convert:'km' }} km </p>
-              <p class="h5 text-info mt-1"> Output: {{miles | convert:'m' }} m</p>
-              <p class="h5 text-info mt-1"> Output: {{miles | convert:'cm' }} cm</p>
+              <p class="h5 text-info mt-1"> Output: {{miles | convert:'km' }}km </p>
+              <p class="h5 text-info mt-1"> Output: {{miles | convert:'m' }}m</p>
+              <p class="h5 text-info mt-1"> Output: {{miles | convert:'cm' }}cm</p>
+              <!-- <div class="p-3 bg-light" *ngIf = "(miles | convert: 'cm' | number : '1.0-2')>0"> -->
+              <div class="p-3 bg-light" *ngIf = "(miles | convert: 'cm' | number : '1.0-2')">
+                <p class="h5 text-info mt-1"> Output with pipe and convert: {{miles | convert: 'cm' | number : '1.0-2'}}cm</p>
+              </div>
               <!-- <p class="h5 text-info mt-1">{{miles | convert | number: '1.0-5' }}</p> -->
             </div>
 
