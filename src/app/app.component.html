@@ -4,58 +4,73 @@
       <div class="card-header bg-success">
         <h2 class="card-title text-light ">Payment Form</h2>
       </div>
-      <div class="card-body">
-        <div class="row">
-          <!--payee Name-->
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="pr-3 text-left w-100  font-weight-bold">Payee Name</label>
-            <input class="w-60 form-control" (input)="onNameChange($event.target.value)" />
-          </div>
-          <div class="col-md-6 form-group " align="left">
-            <label for="" class="pr-3 font-weight-bold w-100 ">Receiver's Name
-            </label>
-            <p class="h5 text-info mt-1">{{name | titlecase }}</p>
-          </div>
+      <form action="">
+        <div class="card-body">
+          <div class="row">
 
-          <!--payment date-->
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="pr-3 font-weight-bold w-100 ">Payment Date</label>
-            <input class="w-60 form-control" type="date" (input)="onDateSet($event.target.value)" />
-          </div>
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
-            </label>
-            <p class="h5 text-info mt-1">{{date | date:'MMMM d, y' }}</p>
-            <!-- <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
+            <!--payee Name-->
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="pr-3 text-left w-100  font-weight-bold">Payee Name</label>
+              <input type="text" class="w-60 form-control" (input)="onNameChange($event.target.value)" />
+            </div>
+            <div class="col-md-6 form-group " align="left">
+              <label for="" class="pr-3 font-weight-bold w-100 ">Receiver's Name
+              </label>
+              <p class="h5 text-info mt-1">{{name | titlecase }}</p>
+            </div>
+
+            <!--payment date-->
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="pr-3 font-weight-bold w-100 ">Payment Date</label>
+              <input class="w-60 form-control" type="date" (input)="onDateSet($event.target.value)" />
+            </div>
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
+              </label>
+              <p class="h5 text-info mt-1">{{date | date:'MMMM d, y' }}</p>
+              <!-- <label for="" class="text-left pr-3 font-weight-bold w-100 ">Receiver's Date
             </label>{{date | date:'medium' }} -->
-          </div>
+            </div>
 
-          <!--Amount-->
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Amount</label>
-            <input class="w-60 form-control" (input)="onPaymentAmount($event.target.value)" />
-          </div>
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="pr-3 font-weight-bold w-100 ">Amount
-            </label>
-            <p class="h5 text-info mt-1">{{amount | currency }}</p>
-          </div>
+            <!--Amount-->
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Amount</label>
+              <input class="w-60 form-control" (input)="onPaymentAmount($event.target.value)" />
+            </div>
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="pr-3 font-weight-bold w-100 ">Amount
+              </label>
+              <p class="h5 text-info mt-1">{{amount | currency }}</p>
+            </div>
 
-          <!--Height-->
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Height</label>
-            <input class="w-60 form-control" (input)="onHeight($event.target.value)" />
-          </div>
-          <div class="col-md-6 form-group" align="left">
-            <label for="" class="pr-3 font-weight-bold w-100 ">Height
-            </label>
-            <p class="h5 text-info mt-1">{{ height | number: '1.1-2' }}</p>
+            <!--Miles-->
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Miles</label>
+              <input class="w-60 form-control" (input)="onMilesChange($event.target.value)" />
+            </div>
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="pr-3 font-weight-bold w-100 ">Miles</label>
+              <p class="h5 text-info mt-1">{{miles | convert}}</p>
+            </div>
+
+
+            <!--Height-->
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="text-left  pr-3 font-weight-bold w-100 ">Height</label>
+              <input class="w-60 form-control" (input)="onHeight($event.target.value)" />
+            </div>
+            <div class="col-md-6 form-group" align="left">
+              <label for="" class="pr-3 font-weight-bold w-100 ">Height
+              </label>
+              <p class="h5 text-info mt-1">{{ height | number: '1.1-2' }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card-footer">
-        <a href="#" class="btn btn-outline-light btn-secondary">Go somewhere</a>
-      </div>
+        <div class="card-footer">
+          {{paymentObject| json}}
+        </div>
+      </form>
+
     </div>
   </div>
 </div>

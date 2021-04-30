@@ -10,6 +10,8 @@ export class AppComponent {
   date: string;
   amount: number;
   height: number;
+  miles: number;
+
 
   // Name
   onNameChange(value: string) {
@@ -30,4 +32,18 @@ export class AppComponent {
   onHeight(value: number) {
     this.height = value;
   }
+
+  //miles
+  onMilesChange(value: string) {
+    this.miles = parseFloat(value);
+  }
+
+    // for json object pipe
+  paymentObject = {
+    name: 'Alice',
+    amount: '1',
+    type: 'Fox',
+    residence: 'Moscow'
+  }
+
 }
